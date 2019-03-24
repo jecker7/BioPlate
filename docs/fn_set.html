@@ -219,9 +219,9 @@
             
   <div class="section" id="set-values-on-plate">
 <span id="id1"></span><h1>Set values on plate<a class="headerlink" href="#set-values-on-plate" title="Permalink to this headline">¶</a></h1>
-<p>Set’s function is used to quickly assign values to a plate.</p>
+<p>The Set function is used to quickly assign values to a plate.</p>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 0.1.2: </span>Set is not the only way to assign value, indexation can be performed too.
+<p><span class="versionmodified">Changed in version 0.1.2: </span>Values can be set using Set function or by index.
 Set can now <cite>Merge value</cite> instead of overide</p>
 </div>
 <div class="section" id="set-on-simple-plate">
@@ -331,7 +331,7 @@ Set can now <cite>Merge value</cite> instead of overide</p>
 </div>
 <div class="section" id="set-multiple-value-at-once">
 <h2>Set multiple value at once<a class="headerlink" href="#set-multiple-value-at-once" title="Permalink to this headline">¶</a></h2>
-<p>Assign multiple value with same pattern:</p>
+<p>Assign multiple values with the same pattern:</p>
 <div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">BioPlate</span> <span class="k">import</span> <span class="n">BioPlate</span>
 <span class="n">plate</span> <span class="o">=</span> <span class="n">BioPlate</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
 
@@ -364,12 +364,12 @@ Set can now <cite>Merge value</cite> instead of overide</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">dict assignation can only be done with <cite>set</cite> method</p>
+<p class="last">dictionary assignment can only be done with <cite>set</cite> method</p>
 </div>
 </div>
 <div class="section" id="merge-value">
 <h2>Merge value<a class="headerlink" href="#merge-value" title="Permalink to this headline">¶</a></h2>
-<p>Value are concatenate with value already present in well</p>
+<p>Value are concatenated with value already present in well</p>
 <div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">BioPlate</span> <span class="k">import</span> <span class="n">BioPlate</span>
 <span class="n">plate</span> <span class="o">=</span> <span class="n">BioPlate</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
 
@@ -377,25 +377,25 @@ Set can now <cite>Merge value</cite> instead of overide</p>
 <span class="n">plate</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;2-4[A-G]&quot;</span><span class="p">,</span>
 <span class="p">[</span><span class="s2">&quot;column&quot;</span><span class="p">,</span> <span class="s2">&quot;column&quot;</span><span class="p">,</span> <span class="s2">&quot;column&quot;</span><span class="p">])</span>
 
-<span class="c1">#merge value already present in column</span>
+<span class="c1"># merge value already present in column</span>
 <span class="n">plate</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;2-4[A-G]&quot;</span><span class="p">,</span>
 <span class="p">[</span><span class="s2">&quot;_2&quot;</span><span class="p">,</span> <span class="s2">&quot;_3&quot;</span><span class="p">,</span> <span class="s2">&quot;_4&quot;</span><span class="p">],</span> <span class="n">merge</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 
-<span class="c1">#assignation is respected</span>
+<span class="c1"># assignment is respected</span>
 <span class="n">plate</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;A-G[2-4]&quot;</span><span class="p">,</span>
 <span class="p">[</span><span class="s2">&quot;_A&quot;</span><span class="p">,</span> <span class="s2">&quot;_B&quot;</span><span class="p">,</span> <span class="s2">&quot;_C&quot;</span><span class="p">,</span> <span class="s2">&quot;_D&quot;</span><span class="p">,</span> <span class="s2">&quot;_E&quot;</span><span class="p">,</span> <span class="s2">&quot;_F&quot;</span><span class="p">,</span> <span class="s2">&quot;_G&quot;</span><span class="p">],</span>
 <span class="n">merge</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">plate</span><span class="p">[</span><span class="s2">&quot;A2&quot;</span><span class="p">])</span> <span class="c1"># column_2_A</span>
 
-<span class="c1">#multiple assignation with same key</span>
+<span class="c1"># multiple assignment with same key</span>
 <span class="n">plate</span><span class="o">.</span><span class="n">set</span><span class="p">([(</span><span class="s2">&quot;2-4[A-G]&quot;</span><span class="p">,</span>
 <span class="p">[</span><span class="s2">&quot;column&quot;</span><span class="p">,</span> <span class="s2">&quot;column&quot;</span><span class="p">,</span> <span class="s2">&quot;column&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;2-4[A-G]&quot;</span><span class="p">,</span>
 <span class="p">[</span><span class="s2">&quot;_2&quot;</span><span class="p">,</span> <span class="s2">&quot;_3&quot;</span><span class="p">,</span> <span class="s2">&quot;_4&quot;</span><span class="p">]),</span> <span class="p">(</span><span class="s2">&quot;A-G[2-4]&quot;</span><span class="p">,</span>
 <span class="p">[</span><span class="s2">&quot;_A&quot;</span><span class="p">,</span> <span class="s2">&quot;_B&quot;</span><span class="p">,</span> <span class="s2">&quot;_C&quot;</span><span class="p">,</span> <span class="s2">&quot;_D&quot;</span><span class="p">,</span> <span class="s2">&quot;_E&quot;</span><span class="p">,</span> <span class="s2">&quot;_F&quot;</span><span class="p">,</span> <span class="s2">&quot;_G&quot;</span><span class="p">])],</span> <span class="n">merge</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>It is now easier to produce complex patern with less code.</p>
+<p>It is now easier to produce complex paterns with less code.</p>
 </div>
 <div class="section" id="important">
 <h2>Important<a class="headerlink" href="#important" title="Permalink to this headline">¶</a></h2>
@@ -424,19 +424,19 @@ Set can now <cite>Merge value</cite> instead of overide</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <ul class="simple">
-<li>If you use numpy indexing to assign be carrefull to not overide your header. Value are in position plate[1:,1:] where column header are on plate[0] and row header are on plate[0, 1:].</li>
+<li>If you use numpy indexing to assign be careful to not overide your header. Values are at index plate[1:,1:], column headers are at plate[0], and row headers are at plate[0, 1:]</li>
 </ul>
 <div class="versionchanged">
 <p><span class="versionmodified">Changed in version 0.1.4.</span></p>
 </div>
 <ul class="simple">
-<li>Set function can be used with tuple of tuple, list of list and a mix of both. This allow to use the same key several time as long as <cite>merge = True</cite></li>
+<li>Set function can be used with nested tuples, nested lists, and a mix of both. This allows use of the same key several times as long as <cite>merge = True</cite></li>
 </ul>
 <div class="versionchanged">
 <p><span class="versionmodified">Changed in version 0.1.2.</span></p>
 </div>
 <ul class="last simple">
-<li>Set function without <cite>merge = True</cite> keep only the last assignation of a value in a  well.</li>
+<li>The Set function without <cite>merge = True</cite> keeps only the last assignment of a value in a well.</li>
 </ul>
 </div>
 </div>

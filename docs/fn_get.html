@@ -219,12 +219,12 @@
             
   <div class="section" id="get-values-on-plate">
 <h1>Get values on plate<a class="headerlink" href="#get-values-on-plate" title="Permalink to this headline">¶</a></h1>
-<p>Get’s function is used to easily retrieve values from a plate.</p>
+<p>The Get function is used to easily retrieve values from a plate.</p>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
-<p class="last">Get return a unique value if call for one well or it will return a <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.ndarray.html">numpy.ndarray</a> for multiple well, to get a list you can use <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.ndarray.tolist.html">.tolist()</a> .</p>
+<p class="last">Get returns a unique value if called on one well, or it will return a <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.ndarray.html">numpy.ndarray</a> for multiple wells. To get a list you can use <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.ndarray.tolist.html">.tolist()</a> .</p>
 </div>
-<p>For demonstration purposes we will used following instances of plate objects.</p>
+<p>For demonstration purposes we will use the following instances of plate objects.</p>
 <div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">BioPlate</span> <span class="k">import</span> <span class="n">BioPlate</span>
 <span class="n">plate</span> <span class="o">=</span> <span class="n">BioPlate</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
 <span class="n">plate1</span> <span class="o">=</span> <span class="n">BioPlate</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
@@ -341,7 +341,7 @@
 </div>
 </div>
 <div class="section" id="get-multiple-value-at-once">
-<h2>Get multiple value at once<a class="headerlink" href="#get-multiple-value-at-once" title="Permalink to this headline">¶</a></h2>
+<h2>Get multiple values at once<a class="headerlink" href="#get-multiple-value-at-once" title="Permalink to this headline">¶</a></h2>
 <p>This will return a numpy array.</p>
 <div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">multiC</span> <span class="o">=</span> <span class="n">plate</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;2-4[A-G]&quot;</span><span class="p">)</span>
 <span class="n">multiC_np</span> <span class="o">=</span> <span class="n">plate</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>

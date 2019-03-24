@@ -219,13 +219,13 @@
             
   <div class="section" id="to-excel">
 <h1>To excel<a class="headerlink" href="#to-excel" title="Permalink to this headline">¶</a></h1>
-<p>This function or class use <a class="reference external" href="http://http://xlsxwriter.readthedocs.io">xlsxwriter</a> in order to past informations on excel files.</p>
+<p>This function uses <a class="reference external" href="http://http://xlsxwriter.readthedocs.io">xlsxwriter</a> to output a plate representation to an Excel file.</p>
 <div class="section" id="common-use-case">
 <h2>Common use case<a class="headerlink" href="#common-use-case" title="Permalink to this headline">¶</a></h2>
-<p>This function or class have for only purpose to offer possibility to share results in format that many people used, spread sheet.</p>
+<p>Exports plate representation to the widely used Excel spreadsheet format.</p>
 </div>
-<div class="section" id="an-exemple">
-<h2>An exemple<a class="headerlink" href="#an-exemple" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="an-example">
+<h2>An exemple<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">BioPlate</span> <span class="k">import</span> <span class="n">BioPlate</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plate</span> <span class="o">=</span> <span class="n">BioPlate</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plate</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;2-11[B-G]&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;control&quot;</span><span class="p">,</span> <span class="s2">&quot;t1&quot;</span><span class="p">,</span> <span class="s2">&quot;t2&quot;</span><span class="p">,</span> <span class="s2">&quot;t3&quot;</span><span class="p">,</span> <span class="s2">&quot;t4&quot;</span><span class="p">,</span> <span class="s2">&quot;t5&quot;</span><span class="p">,</span> <span class="s2">&quot;t6&quot;</span><span class="p">,</span> <span class="s2">&quot;t7&quot;</span><span class="p">,</span> <span class="s2">&quot;t9&quot;</span><span class="p">,</span> <span class="s2">&quot;t10&quot;</span><span class="p">])</span>
@@ -245,7 +245,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plate</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Florian\Desktop\my_plate.xlsx&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>If you want more control over informations past to excel you should use this module instead</p>
+<p>To pass more information to the Excel spreadsheet, use the BioPlateToExcel function instead:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">BioPlate.writer.to_excel</span> <span class="k">import</span> <span class="n">BioPlateToExcel</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bpte</span> <span class="o">=</span> <span class="n">BioPlateToExcel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Florian\Desktop\my_plate.xlsx&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bpte</span><span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="n">plate</span><span class="p">)</span>

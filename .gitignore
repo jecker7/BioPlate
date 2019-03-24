@@ -110,3 +110,7 @@ ENV/
 
 #py-test
 .pytest_cache
+
+# john's todo
+.TODO_john.txt
+
