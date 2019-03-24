@@ -112,5 +112,5 @@ ENV/
 .pytest_cache
 
 # john's todo
-.TODO_john.txt
-
+TODO_john.txt
+deployment_notes.txt
