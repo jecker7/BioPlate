@@ -1,0 +1,36 @@
+image: tiangolo/docker-with-compose
+
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+
+stages:
+  - build
+  - deploy
+  
+build-prod:
+  stage: build
+  script:
+    - TAG=prod FRONTEND_ENV=production sh ./scripts/build-push.sh
+  only:
+    - master
+  tags:
+    - build
+    - test
+
+deploy-prod:
+  stage: deploy
+  script:
+    - >
+      DOMAIN=plate.mfserver.net
+      TRAEFIK_TAG=plate.mfserver.net
+      STACK_NAME=plate-mfserver-net
+      TAG=prod
+      sh ./scripts/deploy.sh
+  environment:
+    name: production
+    url: https://plate.mfserver.net
+  only:
+    - master
+  tags:
+    - swarm
+    - prod
