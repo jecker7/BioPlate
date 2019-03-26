@@ -1,0 +1,5 @@
+our npm dependencies should eventually be placed into a package.json file,
+but since I loathe javascript, we will instead use the standard
+'requirements.txt' file, and install dependencies using following command:
+'cat requirements.txt | xargs npm install -g'
+eventually, the above will go into a bash script
